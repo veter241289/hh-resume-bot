@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HH Анкеты</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f4f4f4 }
+        table { width: 100%; border-collapse: collapse }
+        th, td { padding: 10px; border: 1px solid #ccc }
+        th { background: #eee }
+    </style>
+</head>
+<body>
+    <h1>АНКЕТЫ С HH.RU</h1>
+    <table>
+        <tr>
+            <th>ID</th><th>Имя</th><th>Ссылка</th><th>Дата</th>
+        </tr>
+        {% for resume in resumes %}
+        <tr>
+            <td>{{ resume.0 }}</td>
+            <td>{{ resume.1 }}</td>
+            <td><a href="{{ resume.2 }}" target="_blank">Перейти</a></td>
+            <td>{{ resume.3 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
